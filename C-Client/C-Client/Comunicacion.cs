@@ -23,7 +23,15 @@ namespace C_Client
             MensajeRQ mensajeRQ = new MensajeRQ("raul", Mensaje.ID_MENSAJE_AUTENTICACIONCLIENTE);
             mensajeRQ.Cuerpo=aerq;
             MensajeRS mensajeRS = appClient.sendRequest(mensajeRQ);
-            AutenticacionEmpresaRS aers = (AutenticacionEmpresaRS) mensajeRS.Cuerpo;
+            AutenticacionEmpresaRS aers;
+            if (mensajeRS != null)
+                aers = (AutenticacionEmpresaRS)mensajeRS.Cuerpo;
+            else
+            {
+                aers = new AutenticacionEmpresaRS();
+                aers.Resultado = "2";
+            }
+            
             if (aers.Resultado.Equals("1")) {
                 Console.Out.WriteLine(""+aers.Empresa);
                 return aers.Empresa;

@@ -74,11 +74,11 @@ namespace protocol
 
             do
             {
-                Send(socket, mensajeRQ.asTexto()+ "\n");
+                Send(socket, mensajeRQ.asTexto() + "<EOF>");
                 sendDone.WaitOne();
 
                 Receive(socket);
-                receiveDone.WaitOne();
+               // receiveDone.WaitOne();
                 attemps++;
                 
                 if (response != null)
