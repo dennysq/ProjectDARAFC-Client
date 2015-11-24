@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace C_Client
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            String s = "hola";
+            MessageBox.Show(s.PadLeft(20,'0'));
         }
     }
 }
