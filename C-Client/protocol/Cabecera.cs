@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace protocol
 {
-    class Cabecera
+    public class Cabecera
     {
         private String tipoMensaje; //Longitud fija: 2      Ejemplo: RS o RQ
         private String originador; //Longitud fija:20       Ejemplo: appServer/ip

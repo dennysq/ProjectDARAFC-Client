@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace protocol
 {
-    interface Cuerpo
+    public interface Cuerpo
     {
-        public static char FIELD_SEPARATOR_CHAR='|';
+        
 
-	    public String asTexto();
+	      String asTexto();
 
-	    public Boolean validate(String input);
+          Boolean validate(String input);
 
-	    public void build(String input);
+          void build(String input);
     }
 }

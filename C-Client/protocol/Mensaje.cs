@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 
 namespace protocol
 {
-    abstract class Mensaje
+    public abstract class Mensaje
     {
         protected Cabecera cabecera;
+
+       
         private String tipo;
 
         
-        private Cuerpo cuerpo;
+        protected Cuerpo cuerpo;
 
         
 	    public static  String TIPO_MENSAJE_REQUEST = "RQ";
@@ -34,7 +36,7 @@ namespace protocol
 
         }
 
-        protected Cuerpo Cuerpo
+        public Cuerpo Cuerpo
         {
             get { return cuerpo; }
             set {
@@ -52,11 +54,25 @@ namespace protocol
             set { tipo = value; }
         }
 
+        protected Cabecera Cabecera
+        {
+            get { return cabecera; }
+            set { cabecera = value; }
+        }
+
         public String asTexto()
         {
 
             return this.cabecera.asTexto() + this.cuerpo.asTexto();
 
+        }
+
+        public abstract Boolean build(String input);
+
+        public Boolean validate(String input)
+        {
+
+            return input.Length >= Cabecera.HEADER_LENGTH;
         }
 
     }

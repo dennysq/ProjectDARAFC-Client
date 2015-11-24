@@ -41,8 +41,13 @@
   <ItemGroup>
     <Compile Include="AppClient.cs" />
     <Compile Include="Cabecera.cs" />
+    <Compile Include="clienteApp\MensajeRQ.cs" />
+    <Compile Include="clienteApp\MensajeRS.cs" />
+    <Compile Include="clienteApp\seguridades\AutenticacionEmpresaRQ.cs" />
+    <Compile Include="clienteApp\seguridades\AutenticacionEmpresaRS.cs" />
     <Compile Include="Cuerpo.cs" />
     <Compile Include="Mensaje.cs" />
+    <Compile Include="models\Empresa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="utils\myStringUtils.cs" />
   </ItemGroup>

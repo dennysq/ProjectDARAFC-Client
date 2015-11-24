@@ -84,6 +84,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(151, 20);
             this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.Text = "1723520662001";
             // 
             // txtPass
             // 
@@ -91,6 +92,7 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(151, 20);
             this.txtPass.TabIndex = 3;
+            this.txtPass.Text = "shipobot1";
             // 
             // btnIngresar
             // 
@@ -100,6 +102,7 @@
             this.btnIngresar.TabIndex = 0;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // Login
             // 
