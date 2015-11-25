@@ -36,7 +36,9 @@ namespace protocol.utils
 				int index = 0;
                 for (int i = 0; i < lenghts.Length; i++)
                 {
-					values[i] = str.Substring(index, index = index + lenghts[i]);
+					values[i] = str.Substring(index, lenghts[i]);
+                    
+                    index = index + lenghts[i];
 				}
 				return values;
 			} else {

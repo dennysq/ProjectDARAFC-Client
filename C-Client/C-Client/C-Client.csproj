@@ -78,10 +78,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="models\" />
-    <Folder Include="socket\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\protocol\protocolo.csproj">
       <Project>{36f1d08e-9600-4d9d-aa0b-5ee41ee1976c}</Project>
