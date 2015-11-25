@@ -67,7 +67,7 @@ namespace protocol
             } while (attemps <= 5);
             streamWriter.WriteLine("FIN");
             streamWriter.Flush();
-            
+            tcpClient.Close();
             
 
             
