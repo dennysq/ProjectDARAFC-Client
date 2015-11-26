@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using protocol;
 using protocol.clienteApp;
 using protocol.clienteApp.seguridades;
+using protocol.clienteApp.ingresos;
 using protocol.models;
 
 namespace C_Client
@@ -36,8 +37,36 @@ namespace C_Client
                 Console.Out.WriteLine(""+aers.Empresa);
                 return aers.Empresa;
             }
+            }
+            return null;
         }
-        return null;
-    }
+
+        public static Boolean insertCliente(String id, String nombre, String direccion, String telefono)
+        {
+            if (nombre != null && telefono != null && direccion != null && id.Length == 10)
+            {
+                AppClient appClient = new AppClient();
+                IngresoClienteRQ IngresoClienteRQ = new IngresoClienteRQ();
+                IngresoClienteRQ.Id = id;
+                IngresoClienteRQ.Nombre = nombre;
+                IngresoClienteRQ.Direccion = direccion;
+                IngresoClienteRQ.Telefono = telefono;
+
+                MensajeRQ mensajeRQ = new MensajeRQ("raul", Mensaje.ID_MENSAJE_INGRESOCLIENTE);
+                mensajeRQ.Cuerpo = IngresoClienteRQ;
+                MensajeRS mensajeRS = appClient.sendRequest(mensajeRQ);
+                IngresoClienteRS ingresoClienteRS = (IngresoClienteRS)mensajeRS.Cuerpo;
+                if (ingresoClienteRS.Resultado.Equals("1"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
+        }
+       
     }
 }

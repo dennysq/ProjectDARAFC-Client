@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 
 namespace protocol.utils
 {
-    class myStringUtils
+    class MyStringUtils
     {
         public String md5Hex(String cadena)
         {

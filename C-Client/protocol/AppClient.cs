@@ -10,16 +10,12 @@ using System.Net;
 using System.Threading;
 using System.Web.Script.Serialization;
 
-
-
 namespace protocol
 {
    
 
     public class AppClient
     {
-        
-
         public static  String IPADDRESS = "127.0.0.1";
         public static  int PORT = 4001;
  
@@ -30,33 +26,24 @@ namespace protocol
             //        output = new PrintWriter(socket.getOutputStream(), true);
         }
 
-        
 
         public MensajeRS sendRequest(Mensaje mensajeRQ) {
 
         int attemps = 0;
         try {
-            
-            
-            
+
             IPAddress ipAddress = IPAddress.Parse(IPADDRESS);
             TcpClient tcpClient = new TcpClient(IPADDRESS, PORT);
             NetworkStream networkStream =  tcpClient.GetStream();
             StreamWriter streamWriter = new StreamWriter(networkStream);
             StreamReader streamReader = new StreamReader(networkStream);
-
-
             String response;
 
             do
             {
-
                 streamWriter.WriteLine(mensajeRQ.asTexto());
-
                 streamWriter.Flush();
-
                 response = streamReader.ReadLine();
-
                 Console.WriteLine("Received data: " + response + "\n");
                 attemps++;
                 
@@ -68,26 +55,19 @@ namespace protocol
             streamWriter.WriteLine("FIN");
             streamWriter.Flush();
             tcpClient.Close();
-            
-
-            
+             
             if (response != null) {
                 MensajeRS mensajeRS = new MensajeRS();
                 if (mensajeRS.build(response)) {
                     return mensajeRS;
                 }
             }
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             Console.Out.WriteLine(ex.ToString());
             //Logger.getLogger(AppClient.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return null;
         }
-        return null;
-    }
 
-       
-
-
-        
-        
     }
 }

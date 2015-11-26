@@ -36,7 +36,7 @@ namespace protocol.clienteApp.seguridades
 
         public void build(string input)
         {
-            myStringUtils mySU = new myStringUtils();
+            MyStringUtils mySU = new MyStringUtils();
             if (validate(input)) {
             try {
 

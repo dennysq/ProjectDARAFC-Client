@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.gbxDatos = new System.Windows.Forms.GroupBox();
-            this.gbxOp = new System.Windows.Forms.GroupBox();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.lblPass = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.lblPass = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.gbxOp = new System.Windows.Forms.GroupBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.gbxDatos.SuspendLayout();
             this.gbxOp.SuspendLayout();
@@ -51,23 +51,24 @@
             this.gbxDatos.TabIndex = 0;
             this.gbxDatos.TabStop = false;
             // 
-            // gbxOp
+            // txtPass
             // 
-            this.gbxOp.Controls.Add(this.btnIngresar);
-            this.gbxOp.Location = new System.Drawing.Point(12, 88);
-            this.gbxOp.Name = "gbxOp";
-            this.gbxOp.Size = new System.Drawing.Size(264, 45);
-            this.gbxOp.TabIndex = 1;
-            this.gbxOp.TabStop = false;
+            this.txtPass.Location = new System.Drawing.Point(93, 48);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
+            this.txtPass.Size = new System.Drawing.Size(151, 20);
+            this.txtPass.TabIndex = 3;
+            this.txtPass.Text = "shipobot1";
+            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
-            // lblUsuario
+            // txtUsuario
             // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(16, 26);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(46, 13);
-            this.lblUsuario.TabIndex = 0;
-            this.lblUsuario.Text = "Usuario:";
+            this.txtUsuario.Location = new System.Drawing.Point(93, 19);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(151, 20);
+            this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // lblPass
             // 
@@ -78,21 +79,23 @@
             this.lblPass.TabIndex = 1;
             this.lblPass.Text = "Password:";
             // 
-            // txtUsuario
+            // lblUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(93, 19);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(151, 20);
-            this.txtUsuario.TabIndex = 2;
-            this.txtUsuario.Text = "1723520662001";
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(16, 26);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(46, 13);
+            this.lblUsuario.TabIndex = 0;
+            this.lblUsuario.Text = "Usuario:";
             // 
-            // txtPass
+            // gbxOp
             // 
-            this.txtPass.Location = new System.Drawing.Point(93, 48);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(151, 20);
-            this.txtPass.TabIndex = 3;
-            this.txtPass.Text = "shipobot1";
+            this.gbxOp.Controls.Add(this.btnIngresar);
+            this.gbxOp.Location = new System.Drawing.Point(12, 88);
+            this.gbxOp.Name = "gbxOp";
+            this.gbxOp.Size = new System.Drawing.Size(264, 45);
+            this.gbxOp.TabIndex = 1;
+            this.gbxOp.TabStop = false;
             // 
             // btnIngresar
             // 
@@ -111,7 +114,10 @@
             this.ClientSize = new System.Drawing.Size(284, 148);
             this.Controls.Add(this.gbxOp);
             this.Controls.Add(this.gbxDatos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             this.gbxDatos.ResumeLayout(false);

@@ -15,7 +15,7 @@ namespace protocol
         private String longitudCuerpo;//Longitud fija:4     Ejemplo: 0098
         private String verificacion;//Longitud fija:32      Ejemplo: 6fb6aaba394b3b6759160add3b53b070
         public static int HEADER_LENGTH = 85;
-        private utils.myStringUtils mySU = new utils.myStringUtils();
+        private utils.MyStringUtils mySU = new utils.MyStringUtils();
         public Cabecera(String tipoMensaje, String originador, String idMensaje)
         {
             

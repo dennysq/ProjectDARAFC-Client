@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using protocol.clienteApp.seguridades;
+using protocol.clienteApp.ingresos;
 
 namespace protocol.clienteApp
 {
@@ -36,6 +37,13 @@ namespace protocol.clienteApp
                             AutenticacionEmpresaRS autenticacionClienteRS = new AutenticacionEmpresaRS();
                             autenticacionClienteRS.build(cuerpo);
                             this.cuerpo = autenticacionClienteRS; 
+                        }
+                        else if (this.cabecera.IdMensaje.Equals(ID_MENSAJE_INGRESOCLIENTE))
+                        {
+
+                            IngresoClienteRS ingresoClienteRS = new IngresoClienteRS();
+                            ingresoClienteRS.build(cuerpo);
+                            this.cuerpo = ingresoClienteRS;
                         }
                         else
                         {

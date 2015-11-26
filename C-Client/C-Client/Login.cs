@@ -11,12 +11,32 @@ using protocol;
 using protocol.clienteApp;
 using protocol.clienteApp.seguridades;
 using protocol.models;
+using protocol.utils;
 
 namespace C_Client
 {
     public partial class Login : Form
     {
-        public Login()
+        private static Login instance = null;
+        private static readonly object padlock = new object();
+        TextValidations textValidations = new TextValidations();
+
+        public static Login Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new Login();
+                    }
+                    return instance;
+                }
+            }
+        }
+
+        Login()
         {
             InitializeComponent();
         }
@@ -41,6 +61,9 @@ namespace C_Client
                 if (emp != null)
                 {
                     MessageBox.Show("Usuario Correcto");
+                    PaginaPrincipal paginaPrincipal = PaginaPrincipal.Instance;
+                    paginaPrincipal.Show();
+                    this.Hide();
                     
                 }
                 else
@@ -48,6 +71,27 @@ namespace C_Client
                     MessageBox.Show("El Usuario es incorrecto");
                 }
             }
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            textValidations.validateDigits(e,txtUsuario.Text,10);
+        }
+
+        public void borrarCampos()
+        {
+            txtPass.Text = "";
+            txtUsuario.Text = "";
+        }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            textValidations.validateLength(e, txtPass.Text, 10);
         }
     }
 }
