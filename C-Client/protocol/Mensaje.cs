@@ -25,6 +25,7 @@ namespace protocol
 	    public static  String ID_MENSAJE_INGRESOCLIENTE = "INGRESOCLI";
 	    public static  String ID_MENSAJE_INGRESOFACTURA = "INGRESOFAC";
 	    public static  String ID_MENSAJE_AUTENTICACIONCLIENTE = "LOGINCLIEN";
+        public static  String ID_MENSAJE_CONSULTAPRODUCTO = "CONSULTAPR";
         private utils.MyStringUtils mySU = new utils.MyStringUtils();
 
         public Boolean validateBobyHash()

@@ -45,16 +45,26 @@
   <ItemGroup>
     <Compile Include="AppClient.cs" />
     <Compile Include="Cabecera.cs" />
+    <Compile Include="clienteApp\consultas\ConsultaClienteRQ.cs" />
+    <Compile Include="clienteApp\consultas\ConsultaClienteRS.cs" />
+    <Compile Include="clienteApp\consultas\ConsultaProductoRQ.cs" />
+    <Compile Include="clienteApp\consultas\ConsultaProductoRS.cs" />
     <Compile Include="clienteApp\ingresos\IngresoClienteRQ.cs" />
     <Compile Include="clienteApp\ingresos\IngresoClienteRS.cs" />
+    <Compile Include="clienteApp\ingresos\IngresoFacturaRQ.cs" />
+    <Compile Include="clienteApp\ingresos\IngresoFacturaRS.cs" />
     <Compile Include="clienteApp\MensajeRQ.cs" />
     <Compile Include="clienteApp\MensajeRS.cs" />
     <Compile Include="clienteApp\seguridades\AutenticacionEmpresaRQ.cs" />
     <Compile Include="clienteApp\seguridades\AutenticacionEmpresaRS.cs" />
     <Compile Include="Cuerpo.cs" />
     <Compile Include="Mensaje.cs" />
+    <Compile Include="models\Cliente.cs" />
+    <Compile Include="models\DetalleFacturaAppRQ.cs" />
     <Compile Include="models\Empresa.cs" />
+    <Compile Include="models\Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="utils\DateTableUtils.cs" />
     <Compile Include="utils\MyStringUtils.cs" />
     <Compile Include="utils\TextValidations.cs" />
   </ItemGroup>

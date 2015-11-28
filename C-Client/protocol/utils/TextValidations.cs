@@ -10,7 +10,7 @@ namespace protocol.utils
     {
         public void validateDigits(KeyPressEventArgs e, String text, int maxLength)
         {
-            if (text.Length < maxLength)
+            if (text.Length < maxLength || e.KeyChar == 8)
             {
                 if (Char.IsDigit(e.KeyChar) || e.KeyChar == 8)
                 {
@@ -29,7 +29,7 @@ namespace protocol.utils
 
         public void validateLetters(KeyPressEventArgs e, String text, int maxLength)
         {
-            if (text.Length < maxLength)
+            if (text.Length < maxLength || e.KeyChar == 8)
             {
                 if (Char.IsLetter(e.KeyChar) || e.KeyChar == 8)
                 {
@@ -48,7 +48,7 @@ namespace protocol.utils
 
         public void validateLettersWithSpace(KeyPressEventArgs e, String text, int maxLength)
         {
-            if (text.Length < maxLength)
+            if (text.Length < maxLength || e.KeyChar == 8)
             {
                 if (Char.IsLetter(e.KeyChar) || e.KeyChar == 8 || e.KeyChar.Equals(' '))
                 {
@@ -66,7 +66,7 @@ namespace protocol.utils
         }
         public void validateLettersOrDigits(KeyPressEventArgs e, String text, int maxLength)
         {
-            if (text.Length < maxLength)
+            if (text.Length < maxLength || e.KeyChar == 8)
             {
                 if (Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == 8)
                 {
@@ -157,7 +157,7 @@ namespace protocol.utils
 
         public void validateLength(KeyPressEventArgs e,String text,int maxLength)
         {
-            if (text.Length < maxLength)
+            if (text.Length < maxLength || e.KeyChar == 8)
             {           
                     e.Handled = false;       
             }

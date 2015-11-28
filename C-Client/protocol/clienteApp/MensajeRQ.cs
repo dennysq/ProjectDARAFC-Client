@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using protocol.clienteApp.seguridades;
 using protocol.clienteApp.ingresos;
+using protocol.clienteApp.Consultas;
+using protocol.clienteApp.consultas;
 
 namespace protocol.clienteApp
 {
@@ -43,39 +45,31 @@ namespace protocol.clienteApp
                             ingresoClienteRQ.build(cuerpo);
                             this.cuerpo = ingresoClienteRQ;
                         }
+                        else if (this.cabecera.IdMensaje.Equals(ID_MENSAJE_CONSULTACLIENTE))
+                        {
+                            ConsultaClienteRQ consultaClienteRQ = new ConsultaClienteRQ();
+                            consultaClienteRQ.build(cuerpo);
+                            this.cuerpo = consultaClienteRQ;
+                        }
+                        else if (this.cabecera.IdMensaje.Equals(ID_MENSAJE_CONSULTAPRODUCTO))
+                        {
+                            
+                            ConsultaProductoRQ consultaProductoRQ = new ConsultaProductoRQ();
+                            consultaProductoRQ.build(cuerpo);
+                            this.cuerpo = consultaProductoRQ;
+                        }
+                        else if (this.cabecera.IdMensaje.Equals(ID_MENSAJE_INGRESOFACTURA))
+                        {
+
+                            IngresoFacturaRQ ingresoFacturaRQ = new IngresoFacturaRQ();
+                            ingresoFacturaRQ.build(cuerpo);
+                            this.cuerpo = ingresoFacturaRQ;
+                        }
+                        
                         else {
                             result = false;
                         }
-                        /*switch (this.cabecera.getIdMensaje())
-                        {
-                            case ID_MENSAJE_AUTENTICACIONCLIENTE:
-                                AutenticacionEmpresaRQ autenticacionClienteRQ = new AutenticacionEmpresaRQ();
-                                autenticacionClienteRQ.build(cuerpo);
-                                this.cuerpo = autenticacionClienteRQ;
-                                break;
-                            case ID_MENSAJE_CONSULTACLIENTE:
-                                ConsultaClienteRQ consultaClienteRQ = new ConsultaClienteRQ();
-                                consultaClienteRQ.build(cuerpo);
-                                this.cuerpo = consultaClienteRQ;
-                                break;
-                            case ID_MENSAJE_CONSULTAFACTURA:
-                                ConsultaFacturaRQ consultaFacturaRQ = new ConsultaFacturaRQ();
-                                consultaFacturaRQ.build(cuerpo);
-                                this.cuerpo = consultaFacturaRQ;
-                                break;
-                            case ID_MENSAJE_INGRESOCLIENTE:
-                                IngresoClienteRQ ingresoClienteRQ = new IngresoClienteRQ();
-                                ingresoClienteRQ.build(cuerpo);
-                                this.cuerpo = ingresoClienteRQ;
-                                break;
-                            case ID_MENSAJE_INGRESOFACTURA:
-                                IngresoFacturaRQ ingresoFacturaRQ = new IngresoFacturaRQ();
-                                ingresoFacturaRQ.build(cuerpo);
-                                this.cuerpo = ingresoFacturaRQ;
-                                break;
-                            default:
-                                result = false;
-                        }*/
+                        
                     }
                     else
                     {

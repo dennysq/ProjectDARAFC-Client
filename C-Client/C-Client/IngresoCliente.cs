@@ -59,7 +59,7 @@ namespace C_Client
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
-            IngresoCliente.instance = null;
+            IngresoCliente.Instance = null;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

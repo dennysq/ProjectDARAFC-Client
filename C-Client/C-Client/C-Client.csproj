@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>factura.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,6 +48,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comunicacion.cs" />
+    <Compile Include="ConsultaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaCliente.Designer.cs">
+      <DependentUpon>ConsultaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaFactura.Designer.cs">
+      <DependentUpon>ConsultaFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +80,18 @@
     <Compile Include="IngresoCliente.Designer.cs">
       <DependentUpon>IngresoCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="IngresoFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresoFactura.Designer.cs">
+      <DependentUpon>IngresoFactura.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ConsultaCliente.resx">
+      <DependentUpon>ConsultaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaFactura.resx">
+      <DependentUpon>ConsultaFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +110,9 @@
     <EmbeddedResource Include="IngresoCliente.resx">
       <DependentUpon>IngresoCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="IngresoFactura.resx">
+      <DependentUpon>IngresoFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -96,7 +126,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="factura.ico" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\protocol\protocolo.csproj">
       <Project>{36f1d08e-9600-4d9d-aa0b-5ee41ee1976c}</Project>

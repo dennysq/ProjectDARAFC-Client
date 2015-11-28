@@ -167,7 +167,7 @@
             this.Controls.Add(this.gbxDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "IngresoCliente";
-            this.Text = "INGRESO DEL CLIENTE";
+            this.Text = "INGRESO DE CLIENTE";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.IngresoCliente_FormClosed);
             this.Load += new System.EventHandler(this.IngresoCliente_Load);
             this.gbxDatos.ResumeLayout(false);

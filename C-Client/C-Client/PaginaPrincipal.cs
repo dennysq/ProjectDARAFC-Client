@@ -38,10 +38,7 @@ namespace C_Client
 
         private void registrarClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IngresoCliente ingresoCliente = IngresoCliente.Instance;
-
-            ingresoCliente.MdiParent = this;
-            ingresoCliente.Show();
+            
 
         }
 
@@ -54,6 +51,32 @@ namespace C_Client
         {
             Login.Instance.Show();
             Login.Instance.borrarCampos();
+        }
+
+        private void MenuItemRegistrarCliente_Click(object sender, EventArgs e)
+        {
+            IngresoCliente ingresoCliente = IngresoCliente.Instance;
+
+            ingresoCliente.MdiParent = this;
+            ingresoCliente.Show();
+        }
+
+        private void MenuItemRegistrarFactura_Click(object sender, EventArgs e)
+        {
+            IngresoFactura.Instance.MdiParent = this;
+            IngresoFactura.Instance.Show();
+        }
+
+        private void MenuItemConsultarFactura_Click(object sender, EventArgs e)
+        {
+            ConsultaFactura.Instance.MdiParent = this;
+            ConsultaFactura.Instance.Show();
+        }
+
+        private void MenuItemConsultarCliente_Click(object sender, EventArgs e)
+        {
+            ConsultaCliente.Instance.MdiParent = this;
+            ConsultaCliente.Instance.Show();
         }
     }
 }

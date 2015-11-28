@@ -20,6 +20,13 @@ namespace C_Client
         private static Login instance = null;
         private static readonly object padlock = new object();
         TextValidations textValidations = new TextValidations();
+        private Empresa empresa;
+
+        public Empresa Empresa
+        {
+            get { return empresa; }
+            set { empresa = value; }
+        }
 
         public static Login Instance
         {
@@ -57,8 +64,8 @@ namespace C_Client
 
             if (usuario != null && password != null)
             {
-                Empresa emp = Comunicacion.retrieveEmpresa(usuario, password);
-                if (emp != null)
+                empresa = Comunicacion.retrieveEmpresa(usuario, password);
+                if (empresa != null)
                 {
                     MessageBox.Show("Usuario Correcto");
                     PaginaPrincipal paginaPrincipal = PaginaPrincipal.Instance;
@@ -75,7 +82,7 @@ namespace C_Client
 
         private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            textValidations.validateDigits(e,txtUsuario.Text,10);
+            textValidations.validateDigits(e,txtUsuario.Text,20);
         }
 
         public void borrarCampos()
